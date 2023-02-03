@@ -1,0 +1,67 @@
+package student;
+import java.util.*;
+public class consoleapp {
+
+public static void main(String[] args) {
+  Scanner sc=new Scanner(System.in);
+  ArrayList<String> computers=new ArrayList<>();
+  ArrayList<String> repeaters=new ArrayList<>();
+  int i=0;
+  String str="";
+  while(i==0)
+  {
+    String st=sc.nextLine();
+    String subadd="";
+    String subset="";
+    String connect="";
+    if(st.length()>=15)
+    {
+      subadd=st.substring(0,14);
+      if(st.length()>=20)
+      subset=st.substring(0,19);
+      connect=st.substring(0,7);
+      if(subadd.equals("ADD COMPUTER C"))
+      {
+        String com=st.substring(13,st.length());
+        if(!computers.contains(com))
+        {
+          computers.add(com);
+          System.out.println(computers);
+          System.out.println("Successfully added "+com);
+        }
+        else
+        {
+        System.out.println("Error:That name already exits");
+        }
+      }
+      else if(subadd.equals("ADD REPEATER R"))
+      {
+      String rep=st.substring(13,st.length());
+      if(!repeaters.contains(rep))
+      {
+      repeaters.add(rep);
+      System.out.println(repeaters);
+      System.out.println("Successfully added "+rep);
+      }
+      else
+      {
+      System.out.println("Error:That name already exits");
+      }
+    }
+    else if(subset.equals("SET_DEVICE_STRENGTH"))
+    {
+    System.out.println("Succesfully defined strength");
+    }
+  else
+  {
+   System.out.println("Error:Invalid command syntax");
+  }
+     }
+  else
+  {
+  System.out.println("Error:Invalid command syntax");
+  }
+}
+}
+
+}
